@@ -1,11 +1,25 @@
 
 body {
 	background-color: #FAFECE;
-	color: #9D8EDF;
+	color: #543FBC;
 }
-
-
 
 .main-title {
 	background-color: #C4F2DF;
+}
+
+.character {
+	display: inline-block;
+	align-content: center;
+	width: 240px;
+	margin: 0px 2px 0px 2px;
+	padding: 12px 2px 0px 2px;
+	background-color: #2CB980;
+
+}
+.character > img {
+	margin: auto;
+}
+.healthPointsText {
+	text-align: center;
 }

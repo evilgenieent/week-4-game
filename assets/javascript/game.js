@@ -7,7 +7,7 @@ var characters = {
 		counterAttackPower: 19,
 		idElem: "corgi",
 		activeImg: url("assets/images/charPlaceholder.png"),
-		defeatedImg: url("assets/images/charPlaceholder.png") 
+		defeatedImg: url("assets/images/charPlaceholderDead.png") 
 	},
 	scottie: {
 		name: "Samuel Scottie",
@@ -17,7 +17,7 @@ var characters = {
 		counterAttackPower: 17,
 		idElem: "scottie",
 		activeImg: url("assets/images/charPlaceholder.png"),
-		defeatedImg: url("assets/images/charPlaceholder.png") 
+		defeatedImg: url("assets/images/charPlaceholderDead.png") 
 	},
 	akiba: {
 		name: "Alisha Akiba",
@@ -27,7 +27,7 @@ var characters = {
 		counterAttackPower: 20,
 		idElem: "akiba",
 		activeImg: url("assets/images/charPlaceholder.png"),
-		defeatedImg: url("assets/images/charPlaceholder.png") 
+		defeatedImg: url("assets/images/charPlaceholderDead.png") 
 	},
 	frenchie: {
 		name: "Flora Frenchie",
@@ -37,6 +37,6 @@ var characters = {
 		counterAttackPower: 18,
 		idElem: "frenchie",
 		activeImg: url("assets/images/charPlaceholder.png"),
-		defeatedImg: url("assets/images/charPlaceholder.png") 
+		defeatedImg: url("assets/images/charPlaceholderDead.png") 
 	}
 }
