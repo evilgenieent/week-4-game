@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>RPG Game</title>
+	<title>Precious Puppy RPG</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!--Add fonts link-->
+	<link href="https://fonts.googleapis.com/css?family=Nunito|Leckerli+One" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -30,60 +30,56 @@
 			<div class="col-lg-8">
 				<div class="center-block">
 					<div class="character default-character text-center" id="corgi">
-						<img src="assets/images/corgi.jpg" class="img-responsive">
+						<img src="assets/images/corgi.jpg" class="img-responsive" alt="image of a corgi">
 						<p>Cam Corgi</p>
-						<p class="healthPointsText"><span class="healthPointsStat">150</span> HP</p>
+						<p class="healthPointsText"><span class="healthPointsStat">122</span> HP</p>
 					</div>
 					<div class="character default-character text-center" id="scottie">
-						<img src="assets/images/scottie.jpg" class="img-responsive">
+						<img src="assets/images/scottie.jpg" class="img-responsive" alt="image of a scottie">
 						<p>Samuel Scottie</p>
-						<p class="healthPointsText"><span class="healthPointsStat">100</span> HP</p>
+						<p class="healthPointsText"><span class="healthPointsStat">120</span> HP</p>
 					</div>
 					<div class="character default-character text-center" id="akita">
-						<img src="assets/images/akita.jpg" class="img-responsive">
+						<img src="assets/images/akita.jpg" class="img-responsive" alt="image of an akita">
 						<p>Alisha Akita</p>
-						<p class="healthPointsText"><span class="healthPointsStat">180</span> HP</p>
+						<p class="healthPointsText"><span class="healthPointsStat">125</span> HP</p>
 					</div>
 					<div class="character default-character text-center" id="dachshund">
-						<img src="assets/images/dachshund.jpg" class="img-responsive">
+						<img src="assets/images/dachshund.jpg" class="img-responsive" alt="image of a dachshund">
 						<p>Dee Dachshund</p>
-						<p class="healthPointsText"><span class="healthPointsStat">120</span> HP</p>
+						<p class="healthPointsText"><span class="healthPointsStat">110</span> HP</p>
 					</div>	
 				</div>
 			</div>
 			<div class="col-lg-2"></div>
 		</div>
 		<div class="row text-center chosen-characters">
-			<div class="col-lg-4 col-lg-offset-1" id="player-character-section">
-				<h3>Your Character (aka The #1 Pup)</h3>
+			<div class="col-lg-4" id="player-character-section">
+				<h3>Your Character (aka The Boss Pup)</h3>
+			</div>
+			<!--Arena & Attack Button-->
+			<div class="col-lg-4">
+				<br>
+				<div class="row text-center arena-title">
+					<h2>The Play Pen</h2> <h2>(aka The Gauntlet)</h2>
+					<!--Status Messages & Reset Button-->
+					<p id="statusMsg">Please choose a character.</p>
+				</div>
+				<div class="row text-center">
+				<br>
+					<button id="attack" class="btn btn-default">Attack!</button>
+				</div>
+				<div class="row">
+					<div class="row text-center" id="current-enemy">
+						<h3>Current Hater</h3>
+					</div>
+				</div>
 			</div>
 			<!--Waiting Enemies Section-->
-			<div class="col-lg-6 col-lg-offset-1 waiting-enemies-section">
+			<div class="col-lg-4 waiting-enemies-section">
 				<h3>Haters Throwing Shade!</h3>
 			</div>			
 		</div>
-	</div>
-	
-	<!--Arena & Attack Button-->
-	<div class="container-fluid">
-		<br>
-		<div class="row text-center arena-title">
-			<h2>The Play Pen / Gauntlet</h2>
-			<p id="statusMsg">Please choose a character.</p>
-		</div>
-		<div class="row text-center">
-		<br>
-			<button id="attack" class="btn btn-default">Attack!</button>
-		</div>
-		<div class="row">
-			<div class="row text-center" id="current-enemy">
-				<h3>Current Hater</h3>
-			</div>
-		</div>
-	</div>
-	<!--Status Messages & Reset Button-->
-	<div>
-		
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>

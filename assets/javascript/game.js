@@ -2,18 +2,18 @@ $(document).ready( function(){
 	var characters = {
 		corgi: {
 			name: "Cam Corgi",
-			healthPoints: 120,
+			healthPoints: 122,
 			baseAttack: 7,
 			attackPower: 7,
-			counterAttackPower: 17,
+			counterAttackPower: 13,
 			idElem: "corgi",
 		},
 		scottie: {
 			name: "Samuel Scottie",
-			healthPoints: 115,
+			healthPoints: 120,
 			baseAttack: 9,
 			attackPower: 9,
-			counterAttackPower: 14,
+			counterAttackPower: 10,
 			idElem: "scottie", 
 		},
 		akita: {
@@ -21,7 +21,7 @@ $(document).ready( function(){
 			healthPoints: 125,
 			baseAttack: 6,
 			attackPower: 6,
-			counterAttackPower: 16,
+			counterAttackPower: 12,
 			idElem: "akita",
 		},
 		dachshund: {
@@ -29,7 +29,7 @@ $(document).ready( function(){
 			healthPoints: 110,
 			baseAttack: 8,
 			attackPower: 8,
-			counterAttackPower: 15,
+			counterAttackPower: 11,
 			idElem: "dachshund",
 		}
 	}
@@ -44,16 +44,11 @@ $(document).ready( function(){
 	var defeatedCount = 0;
 
 	function whatWasClicked() {
-		console.log(this.id);
-		console.log("Fight Active? " + isFightActive);
-		console.log("Game Active? " + isGameActive);
-		console.log("Defeated: " + defeatedCount);
 		if ((isFightActive === false) && (isGameActive === true)) {
 			if (isPlayerSelected === false) {
 				playerCharacter = this.id;
 				playerHP = characters[playerCharacter].healthPoints;
 				isPlayerSelected = true;
-				console.log("this is the playerCharacter: " + playerCharacter);
 				$("#player-character-section").append($("#" + playerCharacter.toString()));
 				$("#" + playerCharacter.toString()).removeClass("default-character");
 				$(".default-character").appendTo($(".waiting-enemies-section"));
@@ -67,7 +62,6 @@ $(document).ready( function(){
 				currentEnemy = this.id;
 				enemyHP = characters[currentEnemy].healthPoints;
 				isEnemySelected = true;
-				console.log("this is the currentEnemy: " + currentEnemy);
 				$("#current-enemy").append($("#" + currentEnemy.toString()));
 				$("#current-enemy").find("div").addClass("current-enemy");
 				updateStatusMsg();
@@ -82,19 +76,13 @@ $(document).ready( function(){
 			if ((playerHP > 0) && (enemyHP > 0) && (isGameActive === true)) {
 				playerHP -= characters[currentEnemy].counterAttackPower;
 				enemyHP -= characters[playerCharacter].baseAttack;
-				console.log("Player HP " + playerHP);
-				console.log("Enemy HP " + enemyHP);
 				$("#" + (playerCharacter.toString())).find(".healthPointsStat").html(playerHP);
 				$("#" + (currentEnemy.toString())).find(".healthPointsStat").html(enemyHP);
-				increasePlayerAtk()
-				// if ((playerHP < 0) && (enemyHP < 0)) {
-				// 	// isFightActive = false;
-				// }
 				updateStatusMsg()
+				increasePlayerAtk()
 			}
 			else {
-				updateStatusMsg()
-				//checkScores();
+				updateStatusMsg();
 			}
 		}
 	}
@@ -111,10 +99,10 @@ $(document).ready( function(){
 		else if ((isFightActive === true) && (playerHP > 0) && (enemyHP > 0)){
 			$("#statusMsg").html("You attacked " + characters[currentEnemy].name + " for " + characters[playerCharacter].baseAttack + " damage. <br>" + characters[currentEnemy].name + " attacked you back for " + characters[currentEnemy].counterAttackPower + " damage.")		
 		}
-		else if (enemyHP < 0) {
+		else if ((enemyHP <= 0) && (playerHP > 0)) {
 			defeatedCount ++;
 			if (defeatedCount === 3) {
-				$("#statusMsg").html("YOU WON! You are now the sassiest pup of them all!");
+				$("#statusMsg").html("YOU WON! You are now the most precious pup of them all! ^-^");
 				$("#attack").prop("disabled", true);
 				$(".current-enemy").remove();
 				$("#statusMsg").append("<br><button class='btn btn-default' id='restart'>Restart Game</button>");
@@ -160,12 +148,3 @@ $(document).ready( function(){
 		location.reload(true);
 	});
 })
-
-
-
-
-
-
-
-
-

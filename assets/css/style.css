@@ -1,14 +1,22 @@
-
+/*
+=================
+Main Styles
+=================
+*/
 body {
-	background-color: #FAFECE;
+	background: url("../images/field.jpeg") no-repeat center center fixed;
+	background-size: cover;
 	color: #543FBC;
+	font-family: 'Nunito', sans-serif;
 }
-/*h2, h3, h4, h5, h6{
-	margin-top: 10px;
-	margin-bottom: 10px;
-}*/
-p {
-	margin: 0;
+h1 {
+	font-family: 'Leckerli One', cursive;
+	text-shadow: -2px 3px 0 #82DEB9;
+}
+h2, h3 {
+	text-shadow: -1px 2px 0 #C4F2DF, -2px 2px 0 #9C8EE0;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .btn-default {
 	background-color: #82DEB9;
@@ -16,19 +24,43 @@ p {
 .btn-default:hover {
 	background-color: #2CB980;
 }
+.center-block{
+	display: flex;
+    justify-content: space-around;
+}
+/*
+=================
+Titles
+=================
+*/
 .main-title, 
 .arena-title {
 	background-color: #C4F2DF;
+	box-shadow: 2px 2px 2px 5px #9C8EE0;
 }
-
+.main-title {
+	box-shadow: 0px 2px 2px 1px #9C8EE0;
+}
+.arena-title {
+	border-radius: 5px;
+	height: 10%;
+	min-height: 145px;
+	box-shadow: 2px 2px 2px 1px #9C8EE0;
+}
+/*
+=================
+Characters
+=================
+*/
 .character {
 	display: inline-block;
 	align-content: center;
 	width: 180px;
-	margin: 0px 2px 0px 2px;
+	margin: 2px;
 	padding: 12px 2px 0px 2px;
-	background-color: #2CB980;
+	background-color: #51CA99;
 	border-radius: 20px;
+	box-shadow: 2px 2px 2px 1px #9C8EE0;
 }
 .character:hover {
 	display: inline-block;
@@ -52,6 +84,7 @@ p {
 	border: solid;
 	border-width: 4px;
 	border-color: #00B16A; 
+	box-shadow: 2px 2px 2px 1px #9C8EE0;
 }
 .waiting-enemies {
 	background-color: #9830B5;
@@ -67,10 +100,6 @@ p {
 .healthPointsText {
 	text-align: center;
 }
-.center-block{
-	display: flex;
-    justify-content: space-around;
+.character > p {
+	margin: 0;
 }
-
-
-

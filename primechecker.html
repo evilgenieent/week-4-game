@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Checkerrrrr</title>
+</head>
+<body>
+	<div>
+		<h4>These are primes:</h4>
+		<p>2	3	5	7	11	13	17	19	23	29	31	37	41	43	47	53	59	61	67
+71	73	79	83	89	97</p>
+	</div>
+	<div id="primes"></div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">
+		function isItPrime(number) {
+			if (number === 1) {
+				return false
+			}
+			if (number === 2) {
+				return true
+			}
+			for (i = 2; i < number; i++) {
+				if (number % i === 0) {
+					return false
+				}						
+			}
+			return true
+		}
+
+		for (j = 1; j <= 100; j++) {
+			$("#primes").append(j.toString() + ": " + isItPrime(j) + "<br>");
+		}
+	</script>
+</body>
+</html>
