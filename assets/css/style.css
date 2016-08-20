@@ -10,6 +10,12 @@ body {
 p {
 	margin: 0;
 }
+.btn-default {
+	background-color: #82DEB9;
+}
+.btn-default:hover {
+	background-color: #2CB980;
+}
 .main-title, 
 .arena-title {
 	background-color: #C4F2DF;
@@ -22,6 +28,15 @@ p {
 	margin: 0px 2px 0px 2px;
 	padding: 12px 2px 0px 2px;
 	background-color: #2CB980;
+	border-radius: 20px;
+}
+.character:hover {
+	display: inline-block;
+	align-content: center;
+	width: 180px;
+	margin: 0px 2px 0px 2px;
+	padding: 12px 2px 0px 2px;
+	background-color: #82DEB9;
 	border-radius: 20px;
 }
 .character > img {
@@ -41,6 +56,13 @@ p {
 .waiting-enemies {
 	background-color: #9830B5;
 	color: #C4F2DF;
+}
+.waiting-enemies:hover {
+	background-color: #C984DC;
+	color: #C4F2DF;
+}
+.chosen-characters{
+	display: none;
 }
 .healthPointsText {
 	text-align: center;

@@ -2,43 +2,35 @@ $(document).ready( function(){
 	var characters = {
 		corgi: {
 			name: "Cam Corgi",
-			healthPoints: 150,
+			healthPoints: 120,
 			baseAttack: 7,
 			attackPower: 7,
-			counterAttackPower: 16,
+			counterAttackPower: 17,
 			idElem: "corgi",
-			activeImg: url="/assets/images/charPlaceholder.png",
-			defeatedImg: url="assets/images/charPlaceholderDead.png" 
 		},
 		scottie: {
 			name: "Samuel Scottie",
-			healthPoints: 100,
+			healthPoints: 115,
 			baseAttack: 9,
 			attackPower: 9,
 			counterAttackPower: 14,
-			idElem: "scottie",
-			activeImg: url="assets/images/charPlaceholder.png",
-			defeatedImg: url="assets/images/charPlaceholderDead.png" 
+			idElem: "scottie", 
 		},
-		akiba: {
-			name: "Alisha Akiba",
-			healthPoints: 180,
+		akita: {
+			name: "Alisha Akita",
+			healthPoints: 125,
 			baseAttack: 6,
 			attackPower: 6,
-			counterAttackPower: 17,
-			idElem: "akiba",
-			activeImg: url="assets/images/charPlaceholder.png",
-			defeatedImg: url="assets/images/charPlaceholderDead.png" 
+			counterAttackPower: 16,
+			idElem: "akita",
 		},
 		dachshund: {
 			name: "Dee Dachshund",
-			healthPoints: 120,
+			healthPoints: 110,
 			baseAttack: 8,
 			attackPower: 8,
 			counterAttackPower: 15,
 			idElem: "dachshund",
-			activeImg: url="assets/images/charPlaceholder.png",
-			defeatedImg: url="assets/images/charPlaceholderDead.png" 
 		}
 	}
 	var isPlayerSelected = false;
@@ -68,6 +60,7 @@ $(document).ready( function(){
 				$(".default-character").addClass("waiting-enemies");
 				$("#player-character-section").find("div").addClass("player-character");
 				$(".available-char").toggle();
+				$(".chosen-characters").toggle();
 				updateStatusMsg();
 			}
 			else if (playerCharacter !== this.id) {
@@ -79,6 +72,7 @@ $(document).ready( function(){
 				$("#current-enemy").find("div").addClass("current-enemy");
 				updateStatusMsg();
 				isFightActive = true;
+				$("#attack").prop("disabled", false);
 			} 
 		}
 
@@ -121,6 +115,7 @@ $(document).ready( function(){
 			defeatedCount ++;
 			if (defeatedCount === 3) {
 				$("#statusMsg").html("YOU WON! You are now the sassiest pup of them all!");
+				$("#attack").prop("disabled", true);
 				$(".current-enemy").remove();
 				$("#statusMsg").append("<br><button class='btn btn-default' id='restart'>Restart Game</button>");
 					$("#restart").on("click", function(){
@@ -129,6 +124,7 @@ $(document).ready( function(){
 			}
 			else {
 				$("#statusMsg").html("You defeated " + characters[currentEnemy].name + "! Who will you take on next, mighty pup?");
+				$("#attack").prop("disabled", true);
 				$(".current-enemy").remove();
 				resetFight()
 			}
@@ -136,9 +132,10 @@ $(document).ready( function(){
 		else {
 			$("#statusMsg").html("You have been defeated =( GAME OVER");
 			$("#statusMsg").append("<br><button class='btn btn-default' id='restart'>Restart</button>");
-				$("#restart").on("click", function(){
-					location.reload(true);
-				});
+			$("#attack").prop("disabled", true);
+			$("#restart").on("click", function(){
+				location.reload(true);
+			});
 		}
 	}
 	function resetFight() {
