@@ -3,23 +3,52 @@ body {
 	background-color: #FAFECE;
 	color: #543FBC;
 }
-
-.main-title {
+/*h2, h3, h4, h5, h6{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}*/
+p {
+	margin: 0;
+}
+.main-title, 
+.arena-title {
 	background-color: #C4F2DF;
 }
 
 .character {
 	display: inline-block;
 	align-content: center;
-	width: 240px;
+	width: 180px;
 	margin: 0px 2px 0px 2px;
 	padding: 12px 2px 0px 2px;
 	background-color: #2CB980;
-
+	border-radius: 20px;
 }
 .character > img {
 	margin: auto;
+	border-radius: 5px;
+}
+.player-character{
+	border: solid;
+	border-width: 4px;
+	border-color: #C984DC; 
+}
+.current-enemy {
+	border: solid;
+	border-width: 4px;
+	border-color: #00B16A; 
+}
+.waiting-enemies {
+	background-color: #9830B5;
+	color: #C4F2DF;
 }
 .healthPointsText {
 	text-align: center;
 }
+.center-block{
+	display: flex;
+    justify-content: space-around;
+}
+
+
+
